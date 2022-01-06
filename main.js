@@ -1,6 +1,6 @@
 // Require the necessary discord.js classes
 const { Client, Intents } = require('discord.js');
-const { DISCORD_TOKEN, DISCORD_PREFIX } = process.env;
+const { token } = require('./config.json');
 
 // Create a new client instance
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
@@ -11,4 +11,10 @@ client.once('ready', () => {
 });
 
 // Login to Discord with your client's token
-client.login(DISCORD_TOKEN);
+client.login(token);
+
+// Runs When The Bot is Run
+client.on('ready', () => {
+    console.log('Bot is online!');
+    client.user.setActivity("🌐 Subreddit: https://bit.ly/SubProgramadoresBR", { type: 'WATCHING' });
+});
