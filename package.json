@@ -1,0 +1,26 @@
+{
+  "name": "ProgramaBOT",
+  "version": "1.0.0",
+  "description": "Discord bot for our server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Comunidade-ProgramadoresBR/ProgramaBOT.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Comunidade-ProgramadoresBR/ProgramaBOT/issues"
+  },
+  "homepage": "https://github.com/Comunidade-ProgramadoresBR/ProgramaBOT#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^16.0.1",
+    "@commitlint/config-conventional": "^16.0.0",
+    "husky": "^7.0.4"
+  }
+}
