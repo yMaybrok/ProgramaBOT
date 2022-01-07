@@ -7,6 +7,9 @@ assignees: ''
 
 ---
 
+**Command**
+e.g. /clear
+
 **Describe the bug**
 A clear and concise description of what the bug is.
 
