@@ -1,5 +1,5 @@
 <h1 align="center">
-    DizUmFilme Bot
+    ProgramaBOT
   </h1>
 
 <h4 align="center">
