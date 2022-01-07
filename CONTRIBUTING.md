@@ -1,6 +1,8 @@
 # 🔗 Como contribuir
 Este é um projeto totalmente livre que aceita contribuições via pull requests no GitHub. Este documento tem a responsabilidade de alinhar as contribuições de acordo com os padrões estabelecidos no mesmo. Em caso de dúvidas, [abra uma issue](https://github.com/Comunidade-ProgramadoresBR/ProgramaBOT/issues/new/choose).
 
+O bot foi desenvolvido utilizando a biblioteca [Discord.js](https://discord.js.org/#/). Para acessar a documentação, [Clique Aqui!](https://discordjs.guide/#before-you-begin)
+
 ## Primeiros passos
 1. Faça um *fork* deste repositório.
 2. Faça um clone do respositório *fork* criado
@@ -13,6 +15,24 @@ Este é um projeto totalmente livre que aceita contribuições via pull requests
 *Obs: Sempre mantenha sua branch atualizada com a Main para evitar conflitos.*
 
 Caso você tenha dúvidas sobre o passo a passo, [Clique Aqui!](https://github.com/aprenda-git/pull-request)
+
+## Como usar
+Do seu terminal de comando execute:
+
+```bash
+# Go into the repository
+$ cd ProgramaBOT
+
+# Install dependencies
+$ npm i
+```
+Crie um arquivo *config.json*, você pode usar o arquivo *config.json.example* como template.
+
+Para iniciar o bot é só rodar no seu terminal o seguinte comando: `node .`.
+
+## Como criar um comando novo
+
+Os comandos ficam dentro da pasta *commands*. Para criar um novo comando é só adicionar um novo arquivo .js. Você pode usar o arquivo *ping.js* como referência.
 
 ## Mensagens de commit
 
