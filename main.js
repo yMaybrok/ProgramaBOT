@@ -11,6 +11,21 @@ const { TOKEN, TEST_GUILD_ID } = require('./config.json');
 client.on('ready', () => {
     console.log('Bot is online!');
     client.user.setActivity("🌐 Subreddit: https://bit.ly/SubProgramadoresBR", { type: 'WATCHING' });
+
+    const btnSubreddit = new MessageActionRow()
+        .addComponents(
+            new MessageButton()
+                .setURL("https://bit.ly/SubProgramadoresBR")
+                .setLabel('Subreddit')
+                .setStyle('LINK'),
+    );
+    const welcomeEmbed = new MessageEmbed()
+        .setColor('#0099ff')
+        .setTitle('Olá, eu sou o ProgramaBOT!')
+        .setURL('#')
+        .setAuthor({ name: 'ProgramaBOT', iconURL: './assets/img/logo.jpeg', url: '#' })
+        .setDescription('Eu sou o bot oficial do ProgramadoresBR!\nSe você precisa de ajuda, tente /help')
+    channel.send({ embeds: [welcomeEmbed], components: [btnSubreddit] });
 });
 
 // Loading commands from the commands folder
