@@ -2,7 +2,7 @@ const fs = require('fs');
 const { REST } = require('@discordjs/rest');
 const { Routes } = require('discord-api-types/v9');
 // Require the necessary discord.js classes
-const { Client, Intents, Collection } = require('discord.js');
+const { Client, Intents, Collection, MessageActionRow, MessageButton, MessageEmbed } = require('discord.js');
 
 // Create a new client instance
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
@@ -18,14 +18,17 @@ client.on('ready', () => {
                 .setURL("https://bit.ly/SubProgramadoresBR")
                 .setLabel('Subreddit')
                 .setStyle('LINK'),
+            new MessageButton()
+                .setURL("https://discord.gg/FNmJ5wd")
+                .setLabel('Discord')
+                .setStyle('LINK'),
     );
     const welcomeEmbed = new MessageEmbed()
         .setColor('#0099ff')
         .setTitle('Olá, eu sou o ProgramaBOT!')
-        .setURL('#')
-        .setAuthor({ name: 'ProgramaBOT', iconURL: './assets/img/logo.jpeg', url: '#' })
-        .setDescription('Eu sou o bot oficial do ProgramadoresBR!\nSe você precisa de ajuda, tente /help')
-    channel.send({ embeds: [welcomeEmbed], components: [btnSubreddit] });
+        .setAuthor({ name: 'ProgramaBOT', iconURL: 'https://i.ibb.co/g7V0JV9/aaaa.jpg', url: 'https://discord.gg/FNmJ5wd' })
+        .setDescription('Eu sou o bot oficial do ProgramadoresBR!\n\nSe você precisa de ajuda, tente /help');
+    client.channels.cache.get('928682154223886359').send({ embeds: [welcomeEmbed], components: [btnSubreddit] })
 });
 
 // Loading commands from the commands folder
