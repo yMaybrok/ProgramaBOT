@@ -1,5 +1,6 @@
 {
 	"TOKEN": your_token_here,
 	"CLIENT_ID": your_cliend_id_here,
-	"TEST_GUILD_ID": "your_test_guild_id"
+	"TEST_GUILD_ID": "your_test_guild_id",
+	"MAIN_CHANNEL_ID": "your_main_channel_id" //optional
 }

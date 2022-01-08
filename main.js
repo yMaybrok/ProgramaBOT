@@ -2,15 +2,35 @@ const fs = require('fs');
 const { REST } = require('@discordjs/rest');
 const { Routes } = require('discord-api-types/v9');
 // Require the necessary discord.js classes
-const { Client, Intents, Collection } = require('discord.js');
+const { Client, Intents, Collection, MessageActionRow, MessageButton, MessageEmbed } = require('discord.js');
 
 // Create a new client instance
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
-const { TOKEN, TEST_GUILD_ID } = require('./config.json');
+const { TOKEN, TEST_GUILD_ID, MAIN_CHANNEL_ID } = require('./config.json');
 
 client.on('ready', () => {
     console.log('Bot is online!');
-    client.user.setActivity("🌐 Subreddit: https://bit.ly/SubProgramadoresBR", { type: 'WATCHING' });
+    client.user.setActivity("Subreddit: https://bit.ly/SubProgramadoresBR", { type: 'WATCHING' });
+
+    const btnSubreddit = new MessageActionRow()
+        .addComponents(
+            new MessageButton()
+                .setURL("https://bit.ly/SubProgramadoresBR")
+                .setLabel('Subreddit')
+                .setStyle('LINK'),
+            new MessageButton()
+                .setURL("https://discord.gg/FNmJ5wd")
+                .setLabel('Discord')
+                .setStyle('LINK'),
+    );
+    const welcomeEmbed = new MessageEmbed()
+        .setColor('#0099ff')
+        .setTitle('Olá, eu sou o ProgramaBOT!')
+        .setAuthor({ name: 'ProgramaBOT', iconURL: 'https://i.ibb.co/g7V0JV9/aaaa.jpg', url: 'https://discord.gg/FNmJ5wd' })
+        .setDescription('Eu sou o bot oficial do ProgramadoresBR!\n\nSe você precisa de ajuda, tente /help');
+    if (MAIN_CHANNEL_ID) {
+        client.channels.cache.get(MAIN_CHANNEL_ID).send({ embeds: [welcomeEmbed], components: [btnSubreddit] })
+    };
 });
 
 // Loading commands from the commands folder
