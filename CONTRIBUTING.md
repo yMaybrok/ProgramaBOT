@@ -3,6 +3,9 @@ Este é um projeto totalmente livre que aceita contribuições via pull requests
 
 O bot foi desenvolvido utilizando a biblioteca [Discord.js](https://discord.js.org/#/). Para acessar a documentação, [Clique Aqui!](https://discordjs.guide/#before-you-begin)
 
+## Importante
+Sugestões também são muito bem-vindas, para isso basta criar uma issue utilizando o template de feature request. Para criar uma issue você pode [clicar aqui!](https://github.com/Comunidade-ProgramadoresBR/ProgramaBOT/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=%5BFEAT%5D%3A+)
+
 ## Primeiros passos
 1. Faça um *fork* deste repositório.
 2. Faça um clone do respositório *fork* criado
