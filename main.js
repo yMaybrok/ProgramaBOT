@@ -10,7 +10,15 @@ const { TOKEN, TEST_GUILD_ID, MAIN_CHANNEL_ID } = require('./config.json');
 
 client.on('ready', () => {
     console.log('Bot is online!');
-    client.user.setActivity("Subreddit: https://bit.ly/SubProgramadoresBR", { type: 'WATCHING' });
+
+    let activities = [
+        `Acesse nosso Subreddit`,
+        `Ajude divulgando nosso servidor`,
+    ];
+    var i = 0;
+    setInterval((() => client.user.setActivity(`${activities[i++ % activities.length]}`, { type: 'PLAYING' })), 10000);
+
+    client.user.setStatus("ProgramadoresBR");
 
     const btnSubreddit = new MessageActionRow()
         .addComponents(
